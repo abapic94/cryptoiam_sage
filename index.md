@@ -1,4 +1,3 @@
-## UP IAM Center of Cryptography - _SAGE_ functions
 
 Functions written in _SAGE_ for certain cryptographic topics. At the moment, the functions cover the following topics:
 
