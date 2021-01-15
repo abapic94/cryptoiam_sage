@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## UP IAM Center of Cryptography - _SAGE_ functions
 
-You can use the [editor on GitHub](https://github.com/abapic94/cryptoiam_sage/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Functions written in _SAGE_ for certain cryptographic topics. At the moment, the functions cover the following topics:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+- constructing semi-bent Boolean Functions via Walsh support and a dual bent function
+- computing the dual of a vectorial Boolean function F whose coordinates are semi-bent
+- computing the Walsh support of a Boolean Function
+- finding the intersection of Walsh supports
+- computing the inverse Walsh-Hadamard transform
+- constructing new Vectorial Boolean functions via duals and Walsh supports
+- BCT for non-permutations
+- Determining if K is a subfield of F
+- Determining if a vectorial Boolean function is bent
+- Determining if a vectorial bent Boolean function is weakly/strongly outside M^#
+- Determining the equation (if it exists) which defines a Walsh support of a given Boolean Function
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/abapic94/cryptoiam_sage/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```python
+def semibent(S,ttD,n):
+    ws=[0 for i in [0..(2^n)-1]];
+    j=0;
+    for x in S:
+        i=ZZ(list(x), base=2);
+        ws[i]=2^((n+1)/2)*((-1)^(int(ttD[j])));
+        j=j+1;
+    return ws;
+```
